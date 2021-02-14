@@ -6,7 +6,7 @@
     "start": "cd frontend && ng serve --proxy-config proxy.conf.json",
     "server": "cd server && node app.js",
     "build": "ng build",
-    "test": "ng test",
+    "test": "cd frontend && ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
