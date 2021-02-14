@@ -1,0 +1,27 @@
+<mat-card>
+    <h2>Product List</h2>
+    <mat-list role="list" *ngFor="let list of productList">
+        <mat-list-item role="listitem">Product: {{list.productName}} -- {{list.price}} <button mat-raised-button color="primary" (click)="addtoCart(list.productName)" align="right">Add to Cart</button></mat-list-item>
+    </mat-list>
+</mat-card>
+
+<mat-card>
+    <h2>Payment List</h2>
+    <div >
+        <!-- {{cartData | json}} -->
+        <mat-card-header>
+            <!-- <mat-card-title>Cart List</mat-card-title> -->
+          </mat-card-header>
+          <p><b>Product Name -- Price</b></p>
+          <mat-card-content>
+            <mat-list role="list" *ngFor="let cart of cartData">
+                <mat-list-item role="listitem"> {{cart.productName}}<small>({{cart.cartUnit}})</small> -- Rs.{{cart.priceWithUnit}}<small *ngIf="cart.cartUnit*cart.price-cart.priceWithUnit>0">(discount:{{cart.cartUnit*cart.price-cart.priceWithUnit}})</small></mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        <mat-divider></mat-divider>
+
+        <mat-card-actions> <b>Total:  -- Rs.{{TotalCount}} </b><small>(discount: Rs.{{actualTotalDiscount}})</small></mat-card-actions>
+
+       
+    </div>
+</mat-card>
